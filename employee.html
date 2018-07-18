@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="employee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div id="container">
+    <ul>
+        <li><a class="active" href="#!home" ><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="#!list"><i class="fa fa-address-card"></i>Emoloyee List</a></li>
+
+    </ul>
+    <div ng-view></div>
+</div>
+
+
+<footer>@2018 employees. All rights reserved.</footer>
+<script src="employee.js"></script>
+</body>
+</html>

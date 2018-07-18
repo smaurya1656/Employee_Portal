@@ -1,0 +1,20 @@
+<div id="content">
+<form name="myform">
+  <h1 style="text-align: center; margin-top: 40px;">LOGIN</h1>
+
+
+<div id="box">
+
+    USERID:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="myname" id="uid" ng-model="mymodel" required>
+    <span style="color:red" ng-show = "myform.myname.$dirty && myform.myname.$invalid">ENTER VALID USERNAME </span><br/><br/>
+    PASSWORD: <input type="password" id="pwd" name="pwd" ng-model="myemodel" required>
+    <span style="color:red" ng-show = "myform.myname.$dirty && myform.myname.$invalid">ENTER VALID USERNAME </span><br/><br/><br/>
+
+    <input type="button" value="login" ng-disabled="myform.myname.$invalid || myform.pwd.$invalid" id="login" ng-click="login()">
+    <span></span>
+    <input type="button" value="cancel" id="can" ng-click="cancel()">
+
+</div>
+</form>
+
+</div>

@@ -1,0 +1,62 @@
+<div id="content">
+    <h1 style="text-align: center"><u>Employee List</u></h1>
+
+    <div id="divresponsiv" class="col-xs-12">
+       <input type="button" value="ADD EMPLOYEE" id="add" ng-click="add()">
+
+
+      <div id="arrange">ARRANGE BY:
+         <input type="radio"  id="fname" name="type" value="firstname" ng-model="getorder" >NAME
+            <SPAN></SPAN><span></span>
+         <input type="radio"    name="type"  value="age" ng-model="getorder">AGE
+      </div>
+    <div style="overflow-x:auto;" ng-show="emplist">
+    <table>
+        <tr>
+           <th>ID</th>
+           <th>FULL NAME</th>
+           <th>CITY</th>
+           <th>AGE</th>
+           <th>EDIT &nbsp <i class="fa fa-edit"></i></th>
+           <th>DELETE &nbsp <i class="fa fa-trash"></i></th>
+
+        </tr>
+        <tr ng-repeat="x in myData | filter:id | orderBy:getorder ">
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }} {{x.lastname}}</td>
+            <td>{{x.city}}</td>
+            <td>{{x.age}}</td>
+            <td><button type="button" class="btn btn-primary" ng-click="edit(x.id)">Edit</button></td>
+            <td><button type="button" class="btn btn-primary" ng-click="del(x.id)">Delete</button></td>
+        </tr>
+    </table>
+    </div>
+
+        <div class="main3" ng-show="editData" id="editd" style="text-align: center">
+            <h3> <U> EDIT EMPLOYEE </U></h3><br/><br/>
+            FirstName : <input type="text" ng-model="firstname" ><br><br>
+            Lastname  : &nbsp;<input type="text" ng-model="lastname"><br><br>
+            City : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" ng-model="city"><br><br>
+            Age  : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" ng-model="age"><br><br>
+            <input type="button" class="btn" ng-click="change()" value="SUBMIT">
+        </div>
+
+        <div ng-show="addData" id="addd" style="text-align: center">
+        <form>
+           <h3> <u> ADD EMPLOYEE</u></h3><br/><br/>
+            ID        :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="id1" ng-init=11 ng-model="idd"><br/><br/>
+            FIRSTNAME :  <input type="text" id="fn" ng-model="firstname" name="fullname"> <br/><br/>
+            LASTNAME  :  &nbsp; <input type="text" id="ln" ng-model="lastname" name="lname"><br/><br/>
+            CITY      :&nbsp;&nbsp;&nbsp; <select name="city" ng-model="city" id="citydrop">
+            <option value="jc">JERSEY CITY</option>
+            <option value="nb">NORTHBERGEN</option>
+            <option value="ed">EDISON</option>
+            <option value="hs">HACKENSACK</option>
+        </select><br/><br/>
+
+            AGE       : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="age" id="age" ng-model="age"> <br/><br/>
+            <input type="button" value="save" id="save"  ng-click="addnew($index)"> <span></span>
+        </form>
+        </div>
+    </div>
+</div>

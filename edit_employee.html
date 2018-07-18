@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form ng-controller="employeectrl">
+    FULL NAME :  <input type="text" id="fn" name="fullname"> <br/><br/>
+    CITY : <select name="city">
+    <option value="jc">JERSEY CITY</option>
+    <option value="nb">NORTHBERGEN</option>
+    <option value="ed">EDISON</option>
+    <option value="hs">HACKENSACK</option>
+</select><br/><br/>
+
+   AGE : <input type="number" name="age" id="age"> <br/><br/>
+    <input type="button" value="save" id="save" ng-click="update()"> <span></span>
+    <input type="button" value="cancel" id="cancel" ng-click="location.href='employee_list.html'">
+</form>
+</body>
+</html>
